@@ -7,4 +7,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/sofia_pro_medium</item>
+    </style>
+
+    <style name="ToolBarTextSize" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>
