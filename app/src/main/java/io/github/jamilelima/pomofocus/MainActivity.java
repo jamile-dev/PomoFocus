@@ -11,7 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private ViewPager myViewPager;
-    private TabLayout mytabLayout;
+    private TabLayout myTabLayout;
+    private TabsAssessorAdapter myTabsAssessorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
+
+        myViewPager = findViewById(R.id.main_tabs_pager);
+
+        myTabsAssessorAdapter = new TabsAssessorAdapter(getSupportFragmentManager());
+        myViewPager.setAdapter(myTabsAssessorAdapter);
+
+        myTabLayout = findViewById(R.id.main_tabs);
+        myTabLayout.setupWithViewPager(myViewPager);
     }
 
 
