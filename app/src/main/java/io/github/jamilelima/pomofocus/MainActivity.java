@@ -1,5 +1,6 @@
 package io.github.jamilelima.pomofocus;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Tasks");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         myViewPager = findViewById(R.id.main_tabs_pager);
 
@@ -48,8 +52,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(item.getItemId() == R.id.settings_options) {
-
+            this.sendUserToSettingsActivity();
         }
         return true;
+    }
+
+    private void sendUserToSettingsActivity() {
+        Intent settingsActivity = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(settingsActivity);
     }
 }

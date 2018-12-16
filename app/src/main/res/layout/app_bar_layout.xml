@@ -8,7 +8,7 @@
     android:theme="@style/ToolbarTheme"
     app:titleTextAppearance="@style/ToolBarTextSize"
     app:titleTextColor="@color/colorTextDark"
-    app:title="Tasks"
+    app:navigationIcon="@drawable/ic_arrow_left"
     >
 
 </android.support.v7.widget.Toolbar>
