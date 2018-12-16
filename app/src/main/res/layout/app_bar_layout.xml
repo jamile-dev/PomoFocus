@@ -8,7 +8,4 @@
     android:theme="@style/ToolbarTheme"
     app:titleTextAppearance="@style/ToolBarTextSize"
     app:titleTextColor="@color/colorTextDark"
-    app:navigationIcon="@drawable/ic_arrow_left"
-    >
-
-</android.support.v7.widget.Toolbar>
+    app:navigationIcon="@drawable/ic_arrow_left" />

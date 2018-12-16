@@ -14,6 +14,6 @@
         android:textSize="26sp"
         android:textStyle="bold"
         android:fontFamily="@font/sofia_pro_regular"
-        />
+    />
 
 </RelativeLayout>
