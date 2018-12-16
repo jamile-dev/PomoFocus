@@ -17,9 +17,7 @@
         <include
             android:id="@+id/main_page_toolbar"
             layout="@layout/app_bar_layout"
-            >
-        </include>
-
+        />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/main_tabs"
@@ -29,9 +27,7 @@
             android:background="@color/activityBackground"
             app:tabIndicatorColor="@color/colorPrimaryDark"
             app:tabSelectedTextColor="@color/colorPrimaryDark"
-            >
-
-        </android.support.design.widget.TabLayout>
+         />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -39,13 +35,19 @@
         android:id="@+id/main_tabs_pager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/app_bar_layout">
+        android:layout_below="@id/app_bar_layout"
+    />
 
-    </android.support.v4.view.ViewPager>
-
-
-
-
-
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="36dp"
+        android:src="@drawable/ic_list_add_24px"
+    />
 
 </RelativeLayout>
