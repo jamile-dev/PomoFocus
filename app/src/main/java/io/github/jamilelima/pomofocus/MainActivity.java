@@ -61,4 +61,9 @@ public class MainActivity extends AppCompatActivity {
         Intent settingsActivity = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(settingsActivity);
     }
+
+    public void sendUserToNewTaskActivity(android.view.View View) {
+        Intent newTaskActivity = new Intent(MainActivity.this, NewTaskActivity.class);
+        startActivity(newTaskActivity);
+    }
 }

@@ -48,6 +48,7 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="36dp"
         android:src="@drawable/ic_list_add_24px"
+        android:onClick="sendUserToNewTaskActivity"
     />
 
 </RelativeLayout>
