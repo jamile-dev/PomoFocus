@@ -33,10 +33,9 @@ public class NewTaskActivity extends AppCompatActivity {
         taskDescription = findViewById(R.id.task_description);
         saveTaskButton = findViewById(R.id.save_task_button);
 
-        this.saveTask();
     }
 
-    public void saveTask() {
+    public void saveTask(View view) {
       saveTaskButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
