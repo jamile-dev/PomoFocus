@@ -16,8 +16,9 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     />
+
   <TextView
-    android:id="@+id/textView"
+    android:id="@+id/text_view_timer"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
@@ -35,6 +36,7 @@
     app:layout_constraintTop_toBottomOf="@+id/main_page_timer_toolbar"
     app:layout_constraintVertical_bias="0.501"
     />
+
   <android.support.constraint.Guideline
     android:id="@+id/guideline"
     android:layout_width="wrap_content"
@@ -42,8 +44,9 @@
     android:orientation="vertical"
     app:layout_constraintGuide_begin="205dp"
     />
+
   <Button
-    android:id="@+id/button3"
+    android:id="@+id/start_or_stop_timer"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
@@ -60,7 +63,7 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_timer"
     app:layout_constraintVertical_bias="0.88"
     />
 
