@@ -7,14 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import java.util.LinkedList;
+import io.github.jamilelima.pomofocus.Model.Task;
+import java.util.List;
 
 public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapter.TasksPendingViewHolder> {
 
-  private final LinkedList<String> mTaskPendingList;
+  private List<Task> mTaskPendingList;
   private LayoutInflater mInflater;
 
-  public TasksPendingAdapter(Context context, LinkedList<String> taskPendingList) {
+  public TasksPendingAdapter(Context context, List<Task> taskPendingList) {
     mInflater = LayoutInflater.from(context);
     this.mTaskPendingList = taskPendingList;
   }
@@ -31,8 +32,8 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
   @Override
   public void onBindViewHolder(
       @NonNull TasksPendingAdapter.TasksPendingViewHolder tasksPendingViewHolder, int position) {
-    String mCurrentPendingTask = mTaskPendingList.get(position);
-    tasksPendingViewHolder.taskItemView.setText(mCurrentPendingTask);
+    Task mCurrentPendingTask = mTaskPendingList.get(position);
+    tasksPendingViewHolder.taskTitle.setText(mCurrentPendingTask.getTitle());
   }
 
   @Override
@@ -42,12 +43,15 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
 
   class TasksPendingViewHolder extends RecyclerView.ViewHolder {
 
-    public final TextView taskItemView;
+    public final TextView taskTitle;
+    public final TextView taskDescription;
     final TasksPendingAdapter mAdapter;
 
     public TasksPendingViewHolder(View itemView, TasksPendingAdapter adapter) {
       super(itemView);
-      taskItemView = itemView.findViewById(R.id.pending_tasks_item_title);
+      taskTitle = itemView.findViewById(R.id.pending_tasks_item_title);
+      taskDescription = itemView.findViewById(R.id.task_description);
+
       this.mAdapter = adapter;
     }
 

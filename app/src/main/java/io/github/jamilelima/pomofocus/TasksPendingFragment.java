@@ -1,51 +1,47 @@
 package io.github.jamilelima.pomofocus;
 
 
+import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.Recycler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+
+import io.github.jamilelima.pomofocus.Model.Task;
+
+import java.util.List;
 
 
 public class TasksPendingFragment extends Fragment {
 
-  private final LinkedList<String> taskList = new LinkedList<>();
   private RecyclerView tasksPendingRecyclerView;
   private TasksPendingAdapter tasksPendingAdapter;
 
   public TasksPendingFragment() {
-        // Required empty public constructor
-    }
+    // Required empty public constructor
+  }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+  @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+      Bundle savedInstanceState) {
 
     View rootView = inflater.inflate(R.layout.fragment_tasks_pending, container, false);
 
-    this.addItemsToArray();
+    AppDatabase db = Room.databaseBuilder(getActivity().getApplicationContext(), AppDatabase.class, "production").allowMainThreadQueries().build();
 
-        tasksPendingRecyclerView = rootView.findViewById(R.id.task_pending_recyclerview);
-        tasksPendingAdapter = new TasksPendingAdapter(getActivity(), taskList);
-        tasksPendingRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        tasksPendingRecyclerView.setAdapter(tasksPendingAdapter);
+    List<Task> tasksList = db.taskDao().getAllTasks();
 
-         return rootView;
-    }
+    tasksPendingRecyclerView = rootView.findViewById(R.id.task_pending_recyclerview);
+    tasksPendingAdapter = new TasksPendingAdapter(getActivity(), tasksList);
+    tasksPendingRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    tasksPendingRecyclerView.setAdapter(tasksPendingAdapter);
 
-
-    public void addItemsToArray() {
-      for (int i = 0; i < 20 ; i++) {
-        taskList.addLast("Make coffee " + i);
-      }
-    }
+    return rootView;
+  }
 
 }
