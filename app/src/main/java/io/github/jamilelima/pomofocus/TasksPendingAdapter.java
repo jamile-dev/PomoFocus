@@ -1,11 +1,13 @@
 package io.github.jamilelima.pomofocus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import io.github.jamilelima.pomofocus.Model.Task;
 import java.util.List;
@@ -22,9 +24,20 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
 
   @NonNull
   @Override
-  public TasksPendingAdapter.TasksPendingViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup,
+  public TasksPendingAdapter.TasksPendingViewHolder onCreateViewHolder(@NonNull final ViewGroup viewGroup,
       int viewType) {
     View mItemView = mInflater.inflate(R.layout.list_item_task_pending, viewGroup, false);
+
+    final ImageView timerIcon;
+    timerIcon = mItemView.findViewById(R.id.pending_tasks_item_goTimer);
+
+    timerIcon.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent pomodoroActivity = new Intent(viewGroup.getContext(), PomodoroTimerActivity.class);
+        viewGroup.getContext().startActivity(pomodoroActivity);
+      }
+    });
 
     return new TasksPendingViewHolder(mItemView, this);
   }
