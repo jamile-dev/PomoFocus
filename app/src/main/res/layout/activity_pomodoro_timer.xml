@@ -5,7 +5,63 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="@color/activityBackground"
   tools:context=".PomodoroTimerActivity"
   >
+
+  <include
+    android:id="@+id/main_page_timer_toolbar"
+    layout="@layout/app_bar_layout"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    />
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:text="25:00"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="56dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/main_page_timer_toolbar"
+    app:layout_constraintVertical_bias="0.501"
+    />
+  <android.support.constraint.Guideline
+    android:id="@+id/guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_begin="205dp"
+    />
+  <Button
+    android:id="@+id/button3"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:background="@drawable/start_timer_button"
+    android:fontFamily="@font/titillium_web"
+    android:text="Start timer"
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView"
+    app:layout_constraintVertical_bias="0.88"
+    />
 
 </android.support.constraint.ConstraintLayout>

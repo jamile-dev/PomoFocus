@@ -7,13 +7,13 @@
     tools:context=".NewTaskActivity"
     android:background="@color/activityBackground">
 
-    <include
-      android:id="@+id/main_page_toolbar"
-      layout="@layout/app_bar_layout"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      />
+  <include
+    android:id="@+id/main_page_toolbar"
+    layout="@layout/app_bar_layout"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    />
 
     <EditText
       android:id="@+id/task_title"
