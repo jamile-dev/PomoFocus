@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class TasksPendingFragment extends Fragment {
 
     AppDatabase db = Room.databaseBuilder(getActivity().getApplicationContext(), AppDatabase.class, "production").allowMainThreadQueries().build();
 
-    List<Task> tasksList = db.taskDao().getAllTasks();
+    List<Task> tasksList = db.taskDao().getUndoneTasks();
 
     tasksPendingRecyclerView = rootView.findViewById(R.id.task_pending_recyclerview);
     tasksPendingAdapter = new TasksPendingAdapter(getActivity(), tasksList);

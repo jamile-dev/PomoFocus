@@ -19,6 +19,7 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
   private List<Task> mTaskPendingList;
   private LayoutInflater mInflater;
   String taskName;
+  int taskId;
   Intent pomodoroActivity;
 
   public TasksPendingAdapter(Context context, List<Task> taskPendingList) {
@@ -43,6 +44,7 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
         pomodoroActivity= new Intent(viewGroup.getContext(), PomodoroTimerActivity.class);
         taskName = (String) taskNameView.getText();
         pomodoroActivity.putExtra("EXTRA_TASK_NAME", taskName);
+        pomodoroActivity.putExtra("EXTRA_TASK_ID", taskId);
         viewGroup.getContext().startActivity(pomodoroActivity);
       }
     });
@@ -55,6 +57,7 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
       @NonNull TasksPendingAdapter.TasksPendingViewHolder tasksPendingViewHolder, int position) {
     Task mCurrentPendingTask = mTaskPendingList.get(position);
     tasksPendingViewHolder.taskTitle.setText(mCurrentPendingTask.getTitle());
+    taskId = mCurrentPendingTask.getId();
   }
 
   @Override

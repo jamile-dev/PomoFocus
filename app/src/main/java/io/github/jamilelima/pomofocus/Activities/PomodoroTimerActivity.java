@@ -2,6 +2,7 @@ package io.github.jamilelima.pomofocus.Activities;
 
 import static android.view.View.*;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
+import io.github.jamilelima.pomofocus.AppDatabase;
+import io.github.jamilelima.pomofocus.Model.Task;
 import io.github.jamilelima.pomofocus.R;
+import java.util.List;
 
 public class PomodoroTimerActivity extends AppCompatActivity {
 
@@ -24,6 +28,7 @@ public class PomodoroTimerActivity extends AppCompatActivity {
   Button stopButton;
   Button markDoneButton;
   CountDownTimer pomodoroTimer;
+  int taskId;
 
   String shortBreakText = "05:00";
   String longBreakText = "25:00";
@@ -44,6 +49,8 @@ public class PomodoroTimerActivity extends AppCompatActivity {
 
     Intent taskNameByIntent = getIntent();
     String taskName = taskNameByIntent.getStringExtra("EXTRA_TASK_NAME");
+    Intent taskIdByIntent = getIntent();
+    taskId = taskIdByIntent.getIntExtra("EXTRA_TASK_ID", 0);
 
     // BIND VARIABLES
     mTaskNameTextView = findViewById(R.id.current_task_name);
@@ -118,9 +125,10 @@ public class PomodoroTimerActivity extends AppCompatActivity {
   }
 
   public void markTaskDone(View view) {
-    // @TODO: Implementar setar no banco de dados que a tarefa está completa
-    // @TODO: Mandar tarefa para a lista de tasks feitas
-    // @TODO: Marcar a tarefa como feita
+    AppDatabase db = Room
+        .databaseBuilder(this, AppDatabase.class, "production").allowMainThreadQueries().build();
+
+    db.taskDao().setCompleted(true, taskId);
 
     sendUserToMainActivityOnTaskDone();
   }
