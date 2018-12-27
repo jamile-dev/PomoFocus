@@ -28,7 +28,7 @@
     android:layout_marginEnd="12dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="12dp"
-    android:fontFamily="@font/titillium_web"
+    android:fontFamily="@font/nunito_semi_bold"
     android:gravity="center"
     android:textColor="@color/colorTextDark"
     android:textSize="30sp"
@@ -65,7 +65,7 @@
     android:id="@+id/text_view_timer"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:fontFamily="@font/titillium_web"
+    android:fontFamily="@font/nunito_semi_bold"
     android:gravity="center"
     android:textColor="@color/colorPrimaryDark"
     android:textSize="56sp"
@@ -87,6 +87,7 @@
 
   <Button
     android:id="@+id/start_or_stop_timer"
+    android:textStyle="bold"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
@@ -96,7 +97,7 @@
     android:layout_marginLeft="32dp"
     android:layout_marginRight="32dp"
     android:background="@drawable/start_timer_button"
-    android:fontFamily="@font/titillium_web"
+    android:fontFamily="@font/nunito_regular"
     android:text="Start timer"
     android:textColor="@android:color/white"
     android:textSize="18sp"
@@ -119,7 +120,8 @@
     android:layout_marginLeft="32dp"
     android:layout_marginRight="8dp"
     android:background="@drawable/stop_timer_button_shape"
-    android:fontFamily="@font/titillium_web"
+    android:fontFamily="@font/nunito_regular"
+    android:onClick="stopTimer"
     android:text="STOP"
     android:textColor="@android:color/white"
     android:textSize="18sp"
@@ -130,7 +132,6 @@
     app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
     app:layout_constraintVertical_bias="0.836"
     tools:text="STOP"
-    android:onClick="stopTimer"
     />
 
   <Button
@@ -145,7 +146,8 @@
     android:layout_marginLeft="8dp"
     android:layout_marginRight="32dp"
     android:background="@drawable/done_button_shape"
-    android:fontFamily="@font/titillium_web"
+    android:fontFamily="@font/nunito_regular"
+    android:onClick="markTaskDone"
     android:text="DONE"
     android:textColor="@android:color/white"
     android:textSize="18sp"
@@ -155,7 +157,6 @@
     app:layout_constraintStart_toStartOf="@+id/guideline"
     app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
     app:layout_constraintVertical_bias="0.836"
-    android:onClick="markTaskDone"
     />
 
 </android.support.constraint.ConstraintLayout>

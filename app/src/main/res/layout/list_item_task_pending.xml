@@ -32,7 +32,7 @@
       android:layout_marginRight="8dp"
       android:padding="10dp"
       android:ellipsize="end"
-      android:fontFamily="@font/titillium_web"
+      android:fontFamily="@font/nunito"
       android:maxLength="22"
       android:maxLines="1"
       android:textSize="18sp"
