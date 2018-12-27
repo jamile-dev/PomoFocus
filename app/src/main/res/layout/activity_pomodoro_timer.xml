@@ -23,11 +23,11 @@
     android:textStyle="bold"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginTop="150dp"
+    android:layout_marginTop="64dp"
     android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
+    android:layout_marginEnd="12dp"
     android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
+    android:layout_marginRight="12dp"
     android:fontFamily="@font/titillium_web"
     android:gravity="center"
     android:textColor="@color/colorTextDark"
@@ -39,25 +39,66 @@
     />
 
 
-  <TextView
-    android:id="@+id/text_view_timer"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+  <!--<TextView-->
+    <!--android:id="@+id/text_view_timer"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginRight="8dp"-->
+    <!--android:text="25:00"-->
+    <!--android:textColor="@color/colorPrimaryDark"-->
+    <!--android:textSize="56dp"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/main_page_timer_toolbar"-->
+    <!--app:layout_constraintVertical_bias="0.501"-->
+    <!--/>-->
+
+
+  <com.mikhaellopez.circularprogressbar.CircularProgressBar
+    android:id="@+id/circularProgressBar"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
-    android:text="25:00"
-    android:textColor="@color/colorPrimaryDark"
-    android:textSize="56dp"
+    android:layout_centerHorizontal="true"
+    app:cpb_background_progressbar_color="#BFC0C0"
+    app:cpb_background_progressbar_width="5dp"
+    app:cpb_progressbar_color="@color/colorPrimaryDark"
+    app:cpb_progressbar_width="10dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.496"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/main_page_timer_toolbar"
-    app:layout_constraintVertical_bias="0.501"
+    app:layout_constraintVertical_bias="0.40"
     />
+
+  <TextView
+    android:id="@+id/text_view_timer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/titillium_web"
+    android:gravity="center"
+    android:text="55:20"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="56sp"
+    app:layout_constraintBottom_toBottomOf="@+id/circularProgressBar"
+    app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
+    app:layout_constraintStart_toStartOf="@+id/circularProgressBar"
+    app:layout_constraintTop_toTopOf="@+id/circularProgressBar"
+    app:layout_constraintVertical_bias="0.479"
+    />
+
 
   <android.support.constraint.Guideline
     android:id="@+id/guideline"
@@ -72,7 +113,7 @@
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="4dp"
     android:layout_marginStart="32dp"
     android:layout_marginEnd="32dp"
     android:layout_marginLeft="32dp"

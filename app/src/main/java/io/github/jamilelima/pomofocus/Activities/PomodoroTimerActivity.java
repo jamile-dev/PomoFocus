@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import io.github.jamilelima.pomofocus.R;
 
 public class PomodoroTimerActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class PomodoroTimerActivity extends AppCompatActivity {
   private Toolbar mToolbar;
   TextView mTaskNameTextView;
   TextView mTextViewTimer;
+  CircularProgressBar circularProgressBar;
   Button timerButton;
 
 
@@ -42,13 +44,19 @@ public class PomodoroTimerActivity extends AppCompatActivity {
     timerButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        startOrStopPomodoroTimer();
+        startOrStopPomodoroTimer(30000);
       }
     });
+
   }
 
-  public void startOrStopPomodoroTimer() {
-    new CountDownTimer(	30000, 1000) {
+  public void startOrStopPomodoroTimer(int duration) {
+    circularProgressBar = findViewById(R.id.circularProgressBar);
+
+    circularProgressBar.setProgressWithAnimation(100, duration);
+
+
+    new CountDownTimer(	duration, 1000) {
       @Override
       public void onTick(long millisUntilFinished) {
         int seconds = (int) (millisUntilFinished / 1000);
@@ -60,6 +68,7 @@ public class PomodoroTimerActivity extends AppCompatActivity {
       @Override
       public void onFinish() {
         mTextViewTimer.setText("done");
+        circularProgressBar.setProgress(0);
       }
     }.start();
   }
