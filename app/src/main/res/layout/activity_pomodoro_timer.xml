@@ -129,5 +129,39 @@
     app:layout_constraintTop_toBottomOf="@+id/text_view_timer"
     app:layout_constraintVertical_bias="0.88"
     />
+  <Button
+    android:id="@+id/stopButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/stop_timer_button_shape"
+    android:text="STOP"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/markDone"
+    app:layout_constraintHorizontal_bias="0.128"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
+    app:layout_constraintVertical_bias="0.836"
+    />
+  <Button
+    android:id="@+id/markDone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginRight="32dp"
+    android:background="@drawable/done_button_shape"
+    android:text="DONE"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
+    app:layout_constraintVertical_bias="0.836"
+    />
 
 </android.support.constraint.ConstraintLayout>

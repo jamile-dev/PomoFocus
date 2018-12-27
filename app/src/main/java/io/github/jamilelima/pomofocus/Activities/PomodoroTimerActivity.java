@@ -20,6 +20,13 @@ public class PomodoroTimerActivity extends AppCompatActivity {
   TextView mTextViewTimer;
   CircularProgressBar circularProgressBar;
   Button timerButton;
+  Button stopButton;
+  Button markDoneButton;
+
+  String shortBreakText = "05:00";
+  String longBreakText = "25:00";
+  String pomodoroTimer = "25:00";
+
 
 
   @Override
@@ -35,11 +42,19 @@ public class PomodoroTimerActivity extends AppCompatActivity {
 
     Intent taskNameByIntent = getIntent();
     String taskName = taskNameByIntent.getStringExtra("EXTRA_TASK_NAME");
+
+    // BIND VARIABLES
     mTaskNameTextView = findViewById(R.id.current_task_name);
     mTaskNameTextView.setText(taskName);
-
     mTextViewTimer = findViewById(R.id.text_view_timer);
     timerButton = findViewById(R.id.start_or_stop_timer);
+    stopButton = findViewById(R.id.stopButton);
+    markDoneButton = findViewById(R.id.markDone);
+
+    // SET BUTTON VISIBILITY
+    stopButton.setVisibility(View.GONE);
+    markDoneButton.setVisibility(View.GONE);
+
 
     timerButton.setOnClickListener(new OnClickListener() {
       @Override
@@ -55,8 +70,13 @@ public class PomodoroTimerActivity extends AppCompatActivity {
 
     circularProgressBar.setProgressWithAnimation(100, duration);
 
+    timerButton.setVisibility(View.GONE);
+
+    stopButton.setVisibility(View.VISIBLE);
+    markDoneButton.setVisibility(View.VISIBLE);
 
     new CountDownTimer(	duration, 1000) {
+
       @Override
       public void onTick(long millisUntilFinished) {
         int seconds = (int) (millisUntilFinished / 1000);
@@ -67,10 +87,22 @@ public class PomodoroTimerActivity extends AppCompatActivity {
 
       @Override
       public void onFinish() {
-        mTextViewTimer.setText("done");
-        circularProgressBar.setProgress(0);
+        stopTimer();
       }
     }.start();
+  }
+
+  public void stopTimer(){
+    mTextViewTimer.setText(shortBreakText);
+    circularProgressBar.setProgress(0);
+  }
+
+  public void startShortBreak() {
+
+  }
+
+  public void startLongBreak() {
+
   }
 
 }
