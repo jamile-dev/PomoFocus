@@ -1,8 +1,9 @@
-package io.github.jamilelima.pomofocus;
+package io.github.jamilelima.pomofocus.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import io.github.jamilelima.pomofocus.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -18,7 +19,6 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Settings");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
     }
 
 }

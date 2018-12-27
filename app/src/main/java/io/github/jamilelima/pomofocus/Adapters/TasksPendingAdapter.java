@@ -1,16 +1,17 @@
-package io.github.jamilelima.pomofocus;
+package io.github.jamilelima.pomofocus.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import io.github.jamilelima.pomofocus.Activities.PomodoroTimerActivity;
 import io.github.jamilelima.pomofocus.Model.Task;
+import io.github.jamilelima.pomofocus.R;
 import java.util.List;
 
 public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapter.TasksPendingViewHolder> {

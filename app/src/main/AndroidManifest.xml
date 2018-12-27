@@ -11,7 +11,7 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
         <activity
-          android:name=".MainActivity"
+          android:name=".Activities.MainActivity"
           android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,18 +21,18 @@
         </activity>
 
         <activity
-          android:name=".SettingsActivity"
-          android:parentActivityName=".MainActivity"
+          android:name=".Activities.SettingsActivity"
+          android:parentActivityName=".Activities.MainActivity"
           android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
-          android:name=".NewTaskActivity"
-          android:parentActivityName=".MainActivity"
+          android:name=".Activities.NewTaskActivity"
+          android:parentActivityName=".Activities.MainActivity"
           android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
-          android:name=".PomodoroTimerActivity"
-          android:parentActivityName=".MainActivity"
+          android:name=".Activities.PomodoroTimerActivity"
+          android:parentActivityName=".Activities.MainActivity"
           android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
     </application>

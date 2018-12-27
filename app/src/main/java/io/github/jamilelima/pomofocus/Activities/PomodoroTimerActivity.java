@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus;
+package io.github.jamilelima.pomofocus.Activities;
 
 import android.content.Intent;
 import android.os.CountDownTimer;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import io.github.jamilelima.pomofocus.R;
 
 public class PomodoroTimerActivity extends AppCompatActivity {
 
@@ -30,9 +31,9 @@ public class PomodoroTimerActivity extends AppCompatActivity {
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-    mTaskNameTextView = findViewById(R.id.current_task_name);
     Intent taskNameByIntent = getIntent();
     String taskName = taskNameByIntent.getStringExtra("EXTRA_TASK_NAME");
+    mTaskNameTextView = findViewById(R.id.current_task_name);
     mTaskNameTextView.setText(taskName);
 
     mTextViewTimer = findViewById(R.id.text_view_timer);
@@ -47,7 +48,7 @@ public class PomodoroTimerActivity extends AppCompatActivity {
   }
 
   public void startOrStopPomodoroTimer() {
-    new CountDownTimer(	1500000, 1000) {
+    new CountDownTimer(	30000, 1000) {
       @Override
       public void onTick(long millisUntilFinished) {
         int seconds = (int) (millisUntilFinished / 1000);

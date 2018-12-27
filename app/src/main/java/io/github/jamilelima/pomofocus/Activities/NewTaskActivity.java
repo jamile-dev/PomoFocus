@@ -1,15 +1,16 @@
-package io.github.jamilelima.pomofocus;
+package io.github.jamilelima.pomofocus.Activities;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import io.github.jamilelima.pomofocus.AppDatabase;
 import io.github.jamilelima.pomofocus.Model.Task;
+import io.github.jamilelima.pomofocus.R;
 
 public class NewTaskActivity extends AppCompatActivity {
 

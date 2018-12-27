@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus;
+package io.github.jamilelima.pomofocus.Activities;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import io.github.jamilelima.pomofocus.R;
+import io.github.jamilelima.pomofocus.Adapters.TabsAssessorAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,9 +1,11 @@
-package io.github.jamilelima.pomofocus;
+package io.github.jamilelima.pomofocus.Adapters;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import io.github.jamilelima.pomofocus.Fragments.TasksDoneFragment;
+import io.github.jamilelima.pomofocus.Fragments.TasksPendingFragment;
 
 public class TabsAssessorAdapter extends FragmentPagerAdapter {
 

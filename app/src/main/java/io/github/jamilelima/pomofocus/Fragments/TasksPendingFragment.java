@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus;
+package io.github.jamilelima.pomofocus.Fragments;
 
 
 import android.arch.persistence.room.Room;
@@ -11,8 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import io.github.jamilelima.pomofocus.Adapters.TasksPendingAdapter;
+import io.github.jamilelima.pomofocus.AppDatabase;
 import io.github.jamilelima.pomofocus.Model.Task;
 
+import io.github.jamilelima.pomofocus.R;
 import java.util.List;
 
 
@@ -24,7 +27,6 @@ public class TasksPendingFragment extends Fragment {
   public TasksPendingFragment() {
     // Required empty public constructor
   }
-
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
