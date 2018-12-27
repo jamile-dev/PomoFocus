@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activityBackground"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
 
     <android.support.design.widget.AppBarLayout
@@ -39,16 +39,16 @@
     />
 
     <android.support.design.widget.FloatingActionButton
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="36dp"
-        android:src="@drawable/ic_list_add_24px"
-        android:onClick="sendUserToNewTaskActivity"
+      android:layout_width="56dp"
+      android:layout_height="56dp"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentBottom="true"
+      android:layout_marginEnd="24dp"
+      android:layout_marginRight="24dp"
+      android:layout_marginBottom="36dp"
+      app:srcCompat="@drawable/ic_list_add_24px"
+      android:onClick="sendUserToNewTaskActivity"
     />
 
 </RelativeLayout>

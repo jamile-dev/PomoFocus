@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.jamilelima.pomofocus">
+          package="io.github.jamilelima.pomofocus"
+  >
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme">
+          android:name=".Activities.MainActivity"
+          android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".NewTaskActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            >
-        </activity>
+          android:name=".Activities.SettingsActivity"
+          android:parentActivityName=".Activities.MainActivity"
+          android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+          android:name=".Activities.NewTaskActivity"
+          android:parentActivityName=".Activities.MainActivity"
+          android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+          android:name=".Activities.PomodoroTimerActivity"
+          android:parentActivityName=".Activities.MainActivity"
+          android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+      <meta-data
+        android:name="preloaded_fonts"
+        android:resource="@array/preloaded_fonts"
+        />
+
     </application>
 
 </manifest>

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".TasksDoneFragment">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  tools:context=".Fragments.TasksDoneFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/activityBackground"
-        android:text="Tasks Done"
-        android:layout_centerInParent="true"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/sofia_pro_regular"
-    />
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/task_done_recyclerview"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+      tools:listitem="@layout/list_item_task_done" />
 
-</RelativeLayout>
+</LinearLayout>

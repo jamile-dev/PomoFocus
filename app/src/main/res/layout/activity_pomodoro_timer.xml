@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/activityBackground"
+  tools:context=".Activities.PomodoroTimerActivity"
+  >
+
+  <include
+    android:id="@+id/main_page_timer_toolbar"
+    layout="@layout/app_bar_layout"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    />
+
+
+  <TextView
+    android:id="@+id/current_task_name"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="64dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="12dp"
+    android:fontFamily="@font/nunito_semi_bold"
+    android:gravity="center"
+    android:textColor="@color/colorTextDark"
+    android:textSize="30sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/main_page_timer_toolbar"
+    />
+
+  <com.mikhaellopez.circularprogressbar.CircularProgressBar
+    android:id="@+id/circularProgressBar"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_centerHorizontal="true"
+    app:cpb_background_progressbar_color="#BFC0C0"
+    app:cpb_background_progressbar_width="5dp"
+    app:cpb_progressbar_color="@color/colorPrimaryDark"
+    app:cpb_progressbar_width="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.496"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/main_page_timer_toolbar"
+    app:layout_constraintVertical_bias="0.40"
+    />
+
+  <TextView
+    android:id="@+id/text_view_timer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/nunito_semi_bold"
+    android:gravity="center"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="56sp"
+    app:layout_constraintBottom_toBottomOf="@+id/circularProgressBar"
+    app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
+    app:layout_constraintStart_toStartOf="@+id/circularProgressBar"
+    app:layout_constraintTop_toTopOf="@+id/circularProgressBar"
+    app:layout_constraintVertical_bias="0.479"
+    />
+
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_begin="205dp"
+    />
+
+  <Button
+    android:id="@+id/start_or_stop_timer"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:background="@drawable/start_timer_button"
+    android:fontFamily="@font/nunito_regular"
+    android:text="Start timer"
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_timer"
+    app:layout_constraintVertical_bias="0.88"
+    />
+
+  <Button
+    android:id="@+id/stopButton"
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/stop_timer_button_shape"
+    android:fontFamily="@font/nunito_regular"
+    android:onClick="stopTimer"
+    android:text="STOP"
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/guideline"
+    app:layout_constraintHorizontal_bias="0.233"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
+    app:layout_constraintVertical_bias="0.836"
+    tools:text="STOP"
+    />
+
+  <Button
+    android:id="@+id/markDone"
+    android:textStyle="bold"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="32dp"
+    android:background="@drawable/done_button_shape"
+    android:fontFamily="@font/nunito_regular"
+    android:onClick="markTaskDone"
+    android:text="DONE"
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="@+id/guideline"
+    app:layout_constraintTop_toBottomOf="@+id/circularProgressBar"
+    app:layout_constraintVertical_bias="0.836"
+    />
+
+</android.support.constraint.ConstraintLayout>

@@ -7,7 +7,7 @@
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:fontFamily">@font/sofia_pro_medium</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
     </style>
 
     <style name="ToolBarTextSize" parent="ThemeOverlay.AppCompat.Light">
