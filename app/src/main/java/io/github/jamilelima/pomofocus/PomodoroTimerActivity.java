@@ -1,9 +1,11 @@
 package io.github.jamilelima.pomofocus;
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 public class PomodoroTimerActivity extends AppCompatActivity {
 
   private Toolbar mToolbar;
+  TextView mTaskNameTextView;
   TextView mTextViewTimer;
   Button timerButton;
 
@@ -23,9 +26,14 @@ public class PomodoroTimerActivity extends AppCompatActivity {
 
     mToolbar = findViewById(R.id.main_page_timer_toolbar);
     setSupportActionBar(mToolbar);
-    getSupportActionBar().setTitle("Pomo Timer");
+    getSupportActionBar().setTitle(null);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+    mTaskNameTextView = findViewById(R.id.current_task_name);
+    Intent taskNameByIntent = getIntent();
+    String taskName = taskNameByIntent.getStringExtra("EXTRA_TASK_NAME");
+    mTaskNameTextView.setText(taskName);
 
     mTextViewTimer = findViewById(R.id.text_view_timer);
     timerButton = findViewById(R.id.start_or_stop_timer);

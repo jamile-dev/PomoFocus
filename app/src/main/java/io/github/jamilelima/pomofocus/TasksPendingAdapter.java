@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
 
   private List<Task> mTaskPendingList;
   private LayoutInflater mInflater;
+  String taskName;
+  Intent pomodoroActivity;
 
   public TasksPendingAdapter(Context context, List<Task> taskPendingList) {
     mInflater = LayoutInflater.from(context);
@@ -29,12 +32,16 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
     View mItemView = mInflater.inflate(R.layout.list_item_task_pending, viewGroup, false);
 
     final ImageView timerIcon;
+    final TextView taskNameView;
     timerIcon = mItemView.findViewById(R.id.pending_tasks_item_goTimer);
+    taskNameView = mItemView.findViewById(R.id.pending_tasks_item_title);
 
     timerIcon.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent pomodoroActivity = new Intent(viewGroup.getContext(), PomodoroTimerActivity.class);
+        pomodoroActivity= new Intent(viewGroup.getContext(), PomodoroTimerActivity.class);
+        taskName = (String) taskNameView.getText();
+        pomodoroActivity.putExtra("EXTRA_TASK_NAME", taskName);
         viewGroup.getContext().startActivity(pomodoroActivity);
       }
     });
