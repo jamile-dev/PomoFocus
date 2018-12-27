@@ -51,6 +51,8 @@ public class PomodoroTimerActivity extends AppCompatActivity {
     stopButton = findViewById(R.id.stopButton);
     markDoneButton = findViewById(R.id.markDone);
 
+    mTextViewTimer.setText(pomodoroTimer);
+
     // SET BUTTON VISIBILITY
     stopButton.setVisibility(View.GONE);
     markDoneButton.setVisibility(View.GONE);
