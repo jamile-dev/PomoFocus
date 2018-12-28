@@ -30,9 +30,12 @@ public class PomodoroTimerActivity extends AppCompatActivity {
   CountDownTimer pomodoroTimer;
   int taskId;
 
+  AppDatabase db;
+
   String shortBreakText = "05:00";
   String longBreakText = "25:00";
   String pomodoroTimerText = "25:00";
+  String timeOfBreak = "";
 
 
 
@@ -65,6 +68,8 @@ public class PomodoroTimerActivity extends AppCompatActivity {
     // SET BUTTON VISIBILITY
     stopButton.setVisibility(GONE);
     markDoneButton.setVisibility(GONE);
+
+     db = Room.databaseBuilder(this, AppDatabase.class, "production").allowMainThreadQueries().build();
 
 
     timerButton.setOnClickListener(new OnClickListener() {
@@ -124,10 +129,14 @@ public class PomodoroTimerActivity extends AppCompatActivity {
 
   }
 
-  public void markTaskDone(View view) {
-    AppDatabase db = Room
-        .databaseBuilder(this, AppDatabase.class, "production").allowMainThreadQueries().build();
+  public void endACycleOfPomodoro() {
+    db.taskDao().setCompleted(true, taskId);
 
+
+  }
+
+
+  public void markTaskDone(View view) {
     db.taskDao().setCompleted(true, taskId);
 
     sendUserToMainActivityOnTaskDone();

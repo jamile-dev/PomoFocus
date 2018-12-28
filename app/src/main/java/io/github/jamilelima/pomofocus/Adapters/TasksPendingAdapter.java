@@ -57,6 +57,8 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
       @NonNull TasksPendingAdapter.TasksPendingViewHolder tasksPendingViewHolder, int position) {
     Task mCurrentPendingTask = mTaskPendingList.get(position);
     tasksPendingViewHolder.taskTitle.setText(mCurrentPendingTask.getTitle());
+    tasksPendingViewHolder.taskDescription.setText(mCurrentPendingTask.getDescription());
+
     taskId = mCurrentPendingTask.getId();
   }
 
@@ -74,7 +76,7 @@ public class TasksPendingAdapter extends RecyclerView.Adapter<TasksPendingAdapte
     public TasksPendingViewHolder(View itemView, TasksPendingAdapter adapter) {
       super(itemView);
       taskTitle = itemView.findViewById(R.id.pending_tasks_item_title);
-      taskDescription = itemView.findViewById(R.id.task_description);
+      taskDescription = itemView.findViewById(R.id.pending_tasks_item_description);
 
       this.mAdapter = adapter;
     }

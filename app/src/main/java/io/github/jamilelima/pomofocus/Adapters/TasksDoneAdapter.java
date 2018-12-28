@@ -33,6 +33,7 @@ public class TasksDoneAdapter extends RecyclerView.Adapter<TasksDoneAdapter.Task
   public void onBindViewHolder(@NonNull TasksDoneViewHolder tasksDoneViewHolder, int position) {
     Task currentDoneTask = doneTasksList.get(position);
     tasksDoneViewHolder.taskTitle.setText(currentDoneTask.getTitle());
+    tasksDoneViewHolder.taskDescription.setText(currentDoneTask.getDescription());
   }
 
   @Override
@@ -45,10 +46,12 @@ public class TasksDoneAdapter extends RecyclerView.Adapter<TasksDoneAdapter.Task
 
     final TasksDoneAdapter mAdapter;
     public final TextView taskTitle;
+    public final TextView taskDescription;
 
     public TasksDoneViewHolder(View itemView, TasksDoneAdapter adapter) {
       super(itemView);
       taskTitle = itemView.findViewById(R.id.done_tasks_item_title);
+      taskDescription= itemView.findViewById(R.id.done_tasks_item_description);
 
       this.mAdapter = adapter;
     }

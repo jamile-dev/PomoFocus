@@ -78,6 +78,10 @@ public class NewTaskActivity extends AppCompatActivity {
         is_completed
     ));
 
-    startActivity(new Intent(NewTaskActivity.this, MainActivity.class));
+    Intent mainActivityIntent = new Intent(NewTaskActivity.this, MainActivity.class);
+    mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    startActivity(mainActivityIntent);
+    this.finish();
+
   }
 }
