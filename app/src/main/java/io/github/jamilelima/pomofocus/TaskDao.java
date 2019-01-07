@@ -22,4 +22,11 @@ public interface TaskDao {
   @Query("UPDATE task SET is_completed  = :isCompleted WHERE id = :id")
   void setCompleted(boolean isCompleted, int id);
 
+  @Query("SELECT pomodoro_amount FROM task WHERE id = :id")
+  int getPomodoroAmount(int id);
+
+  @Query("UPDATE task SET pomodoro_amount = :pomodoroAmount WHERE id = :id")
+  void setPomodoroAmount(int pomodoroAmount, int id);
+
+
 }

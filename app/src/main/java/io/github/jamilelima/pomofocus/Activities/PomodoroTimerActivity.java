@@ -139,6 +139,8 @@ public class PomodoroTimerActivity extends AppCompatActivity {
   public void markTaskDone(View view) {
     db.taskDao().setCompleted(true, taskId);
 
+    setAndReturnTotalOfPomodoros();
+
     sendUserToMainActivityOnTaskDone();
   }
 
@@ -147,6 +149,17 @@ public class PomodoroTimerActivity extends AppCompatActivity {
     pendingTasksList.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     startActivity(pendingTasksList);
     this.finish();
+  }
+
+  public int getTotalOfPomodoros() {
+    return db.taskDao().getPomodoroAmount(taskId);
+  }
+
+  public int setAndReturnTotalOfPomodoros() {
+    int actualTotalOfPomodoros = getTotalOfPomodoros();
+    int newTotalOfPomodoros = actualTotalOfPomodoros + 1;
+    db.taskDao().setPomodoroAmount(newTotalOfPomodoros, taskId);
+    return newTotalOfPomodoros;
   }
 
 }
