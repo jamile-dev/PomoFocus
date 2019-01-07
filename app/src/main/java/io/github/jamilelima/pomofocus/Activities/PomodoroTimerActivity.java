@@ -75,7 +75,7 @@ public class PomodoroTimerActivity extends AppCompatActivity {
     timerButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        startOrStopPomodoroTimer(30000);
+        startOrStopPomodoroTimer(1500000);
       }
     });
 
