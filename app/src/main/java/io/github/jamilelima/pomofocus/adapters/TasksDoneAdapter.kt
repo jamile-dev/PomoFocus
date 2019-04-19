@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import io.github.jamilelima.pomofocus.Model.Task
+import io.github.jamilelima.pomofocus.model.Task
 import io.github.jamilelima.pomofocus.R
 import kotlinx.android.synthetic.main.list_item_task_done.view.*
 

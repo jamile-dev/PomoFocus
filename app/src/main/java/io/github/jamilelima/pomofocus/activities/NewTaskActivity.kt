@@ -9,7 +9,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import io.github.jamilelima.pomofocus.AppDatabase
-import io.github.jamilelima.pomofocus.Model.Task
+import io.github.jamilelima.pomofocus.model.Task
 import io.github.jamilelima.pomofocus.R
 import kotlinx.android.synthetic.main.activity_new_task.*
 
