@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import io.github.jamilelima.pomofocus.adapters.TasksDoneAdapter
 import io.github.jamilelima.pomofocus.AppDatabase
 import io.github.jamilelima.pomofocus.R
+import kotlinx.android.synthetic.main.fragment_tasks_done.view.*
 
 
 class TasksDoneFragment : Fragment() {
@@ -30,7 +31,7 @@ class TasksDoneFragment : Fragment() {
 
         val tasksList = db.taskDao().doneTasks
 
-        tasksDoneRecyclerView = rootView.findViewById(R.id.task_done_recyclerview)
+        tasksDoneRecyclerView = rootView.task_done_recyclerview
         tasksDoneAdapter = TasksDoneAdapter(activity!!, tasksList)
         tasksDoneRecyclerView?.layoutManager = LinearLayoutManager(activity)
         tasksDoneRecyclerView?.adapter = tasksDoneAdapter
