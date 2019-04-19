@@ -3,8 +3,8 @@ package io.github.jamilelima.pomofocus.adapters
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import io.github.jamilelima.pomofocus.Fragments.TasksDoneFragment
-import io.github.jamilelima.pomofocus.Fragments.TasksPendingFragment
+import io.github.jamilelima.pomofocus.fragments.TasksDoneFragment
+import io.github.jamilelima.pomofocus.fragments.TasksPendingFragment
 
 class TabsAssessorAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 

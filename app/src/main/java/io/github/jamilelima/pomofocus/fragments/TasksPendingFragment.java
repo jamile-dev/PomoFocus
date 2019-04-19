@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.Fragments;
+package io.github.jamilelima.pomofocus.fragments;
 
 
 import android.arch.persistence.room.Room;
