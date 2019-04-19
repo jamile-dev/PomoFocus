@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import io.github.jamilelima.pomofocus.R
-import io.github.jamilelima.pomofocus.Adapters.TabsAssessorAdapter
+import io.github.jamilelima.pomofocus.adapters.TabsAssessorAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

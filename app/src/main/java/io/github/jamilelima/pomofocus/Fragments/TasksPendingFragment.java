@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import io.github.jamilelima.pomofocus.Adapters.TasksPendingAdapter;
+import io.github.jamilelima.pomofocus.adapters.TasksPendingAdapter;
 import io.github.jamilelima.pomofocus.AppDatabase;
 import io.github.jamilelima.pomofocus.Model.Task;
 

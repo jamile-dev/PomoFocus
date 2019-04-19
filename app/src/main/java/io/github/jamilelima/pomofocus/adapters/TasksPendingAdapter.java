@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.Adapters;
+package io.github.jamilelima.pomofocus.adapters;
 
 import android.content.Context;
 import android.content.Intent;
