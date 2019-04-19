@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.Activities;
+package io.github.jamilelima.pomofocus.activities;
 
 import static android.view.View.*;
 
@@ -14,9 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import io.github.jamilelima.pomofocus.AppDatabase;
-import io.github.jamilelima.pomofocus.Model.Task;
 import io.github.jamilelima.pomofocus.R;
-import java.util.List;
 
 public class PomodoroTimerActivity extends AppCompatActivity {
 

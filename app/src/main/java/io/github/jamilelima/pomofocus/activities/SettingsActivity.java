@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.Activities;
+package io.github.jamilelima.pomofocus.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

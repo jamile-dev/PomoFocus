@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import io.github.jamilelima.pomofocus.Activities.PomodoroTimerActivity;
+import io.github.jamilelima.pomofocus.activities.PomodoroTimerActivity;
 import io.github.jamilelima.pomofocus.Model.Task;
 import io.github.jamilelima.pomofocus.R;
 import java.util.List;

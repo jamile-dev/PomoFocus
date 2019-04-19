@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.Activities;
+package io.github.jamilelima.pomofocus.activities;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
