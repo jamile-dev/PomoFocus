@@ -9,12 +9,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.view.View
-import android.view.View.OnClickListener
-import android.widget.Button
-import android.widget.TextView
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import io.github.jamilelima.pomofocus.AppDatabase
 import io.github.jamilelima.pomofocus.R
+import io.github.jamilelima.pomofocus.scenes.main.MainActivity
 import kotlinx.android.synthetic.main.activity_pomodoro_timer.*
 
 class PomodoroTimerActivity : AppCompatActivity() {

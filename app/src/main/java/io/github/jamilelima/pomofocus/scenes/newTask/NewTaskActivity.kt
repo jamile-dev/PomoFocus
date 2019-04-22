@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.activities
+package io.github.jamilelima.pomofocus.scenes.newTask
 
 import android.arch.persistence.room.Room
 import android.content.Intent
@@ -11,6 +11,7 @@ import android.view.View
 import io.github.jamilelima.pomofocus.AppDatabase
 import io.github.jamilelima.pomofocus.model.Task
 import io.github.jamilelima.pomofocus.R
+import io.github.jamilelima.pomofocus.scenes.main.MainActivity
 import kotlinx.android.synthetic.main.activity_new_task.*
 
 class NewTaskActivity : AppCompatActivity() {
@@ -20,11 +21,8 @@ class NewTaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_task)
+        this.setSupportToActionBar()
 
-        setSupportActionBar(main_page_toolbar as Toolbar)
-        supportActionBar?.title = "New task"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         task_title.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(str: CharSequence, start: Int, count: Int, after: Int) {}
@@ -44,8 +42,16 @@ class NewTaskActivity : AppCompatActivity() {
                 .build()
     }
 
+    private fun setSupportToActionBar() {
+        setSupportActionBar(main_page_toolbar as Toolbar)
+        supportActionBar?.title = "New task"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
     fun saveTask(view: View) {
 
+        // VIEWMODEL:
         val title = task_title.text.toString()
         val description = task_description.text.toString()
         val pomodoroAmount = 4

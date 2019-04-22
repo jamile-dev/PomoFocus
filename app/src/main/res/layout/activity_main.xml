@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activityBackground"
-    tools:context=".activities.MainActivity">
+    tools:context=".scenes.main.MainActivity">
 
 
     <android.support.design.widget.AppBarLayout
@@ -48,7 +48,7 @@
       android:layout_marginRight="24dp"
       android:layout_marginBottom="36dp"
       app:srcCompat="@drawable/ic_list_add_24px"
-      android:onClick="sendUserToNewTaskActivity"
+      android:onClick="displayNewTaskActivity"
     />
 
 </RelativeLayout>
