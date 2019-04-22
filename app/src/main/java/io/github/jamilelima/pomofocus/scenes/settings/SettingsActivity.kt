@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.activities
+package io.github.jamilelima.pomofocus.scenes.settings
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

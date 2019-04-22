@@ -14,7 +14,7 @@ import io.github.jamilelima.pomofocus.R
 import io.github.jamilelima.pomofocus.scenes.main.MainActivity
 import kotlinx.android.synthetic.main.activity_new_task.*
 
-class NewTaskActivity : AppCompatActivity() {
+class NewTaskActivity : AppCompatActivity(), NewTask.View {
 
     private lateinit var db: AppDatabase
 
@@ -28,10 +28,9 @@ class NewTaskActivity : AppCompatActivity() {
             override fun beforeTextChanged(str: CharSequence, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(str: CharSequence, start: Int, before: Int, count: Int) {
-                if (str.toString().trim { it <= ' ' }.isEmpty()) {
-                    save_task_button.visibility = View.GONE
-                } else {
-                    save_task_button.visibility = View.VISIBLE
+                when {
+                    str.toString().trim().isEmpty() -> save_task_button.visibility = View.GONE
+                    else -> save_task_button.visibility = View.VISIBLE
                 }
             }
 
@@ -42,13 +41,15 @@ class NewTaskActivity : AppCompatActivity() {
                 .build()
     }
 
-    private fun setSupportToActionBar() {
+    // Perguntar se isso pode ser feito em um único local pq está repetido em quase todas as activities
+    override fun setSupportToActionBar() {
         setSupportActionBar(main_page_toolbar as Toolbar)
         supportActionBar?.title = "New task"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
+    // Perguntar pq quando recebe view: View como parametro dá erro ao tentar implementar a interface
     fun saveTask(view: View) {
 
         // VIEWMODEL:
@@ -57,6 +58,7 @@ class NewTaskActivity : AppCompatActivity() {
         val pomodoroAmount = 4
         val isCompleted = false
 
+        // Qual o local para fazer esse tipo de manipulação?
         db.taskDao().insertAll(Task(
                 title,
                 description,
@@ -68,6 +70,5 @@ class NewTaskActivity : AppCompatActivity() {
         mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(mainActivityIntent)
         this.finish()
-
     }
 }

@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-          android:name=".activities.SettingsActivity"
+          android:name=".scenes.settings.SettingsActivity"
           android:parentActivityName=".scenes.main.MainActivity"
           android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
@@ -31,7 +31,7 @@
           android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
-          android:name=".activities.PomodoroTimerActivity"
+          android:name=".scenes.pomodoroTimer.PomodoroTimerActivity"
           android:parentActivityName=".scenes.main.MainActivity"
           android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

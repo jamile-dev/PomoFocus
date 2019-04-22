@@ -9,7 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import io.github.jamilelima.pomofocus.R
 import io.github.jamilelima.pomofocus.scenes.newTask.NewTaskActivity
-import io.github.jamilelima.pomofocus.activities.SettingsActivity
+import io.github.jamilelima.pomofocus.scenes.settings.SettingsActivity
 import io.github.jamilelima.pomofocus.adapters.TabsAssessorAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 

@@ -1,4 +1,4 @@
-package io.github.jamilelima.pomofocus.activities
+package io.github.jamilelima.pomofocus.scenes.pomodoroTimer
 
 import android.view.View.*
 
@@ -35,20 +35,14 @@ class PomodoroTimerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pomodoro_timer)
-
-        setSupportActionBar(main_page_timer_toolbar as Toolbar)
-        supportActionBar?.title = null
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        this.setSupportToActionBar()
 
         val taskName = intent.getStringExtra("EXTRA_TASK_NAME")
         taskId = intent.getIntExtra("EXTRA_TASK_ID", 0)
 
-        // BIND VARIABLES
         current_task_name.text = taskName
         text_view_timer.text = pomodoroTimerText
 
-        // SET BUTTON VISIBILITY
         stopButton.visibility = GONE
         markDone.visibility = GONE
 
@@ -58,7 +52,14 @@ class PomodoroTimerActivity : AppCompatActivity() {
 
     }
 
-    fun startOrStopPomodoroTimer(duration: Int) {
+    private fun setSupportToActionBar() {
+        setSupportActionBar(main_page_timer_toolbar as Toolbar)
+        supportActionBar?.title = null
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    private fun startOrStopPomodoroTimer(duration: Int) {
         circularProgressBar = findViewById(R.id.circularProgressBar)
 
         circularProgressBar.setProgressWithAnimation(100f, duration)
