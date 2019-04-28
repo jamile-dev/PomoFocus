@@ -20,15 +20,17 @@ class MainActivity : AppCompatActivity(), Main.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        this.setActionBarSupport()
-        this.setAdapterSupport()
+        setActionBarSupport()
+        setAdapterSupport()
     }
 
     private fun setActionBarSupport() {
         setSupportActionBar(main_page_toolbar as Toolbar)
-        supportActionBar?.title = "Tasks"
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        supportActionBar?.setDisplayShowHomeEnabled(false)
+        supportActionBar?.let {
+            it.title = "Tasks"
+            it.setDisplayHomeAsUpEnabled(false)
+            it.setDisplayShowCustomEnabled(false)
+        }
     }
 
     private fun setAdapterSupport() {
@@ -59,6 +61,6 @@ class MainActivity : AppCompatActivity(), Main.View {
     }
 
     override fun displayHowItWorksActivity() {
-       // @TODO: IMPLEMENTS THIS OKAY?
+        // @TODO: IMPLEMENTS THIS OKAY?
     }
 }
