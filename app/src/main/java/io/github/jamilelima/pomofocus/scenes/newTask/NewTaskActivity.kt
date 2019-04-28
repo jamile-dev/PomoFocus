@@ -9,8 +9,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import io.github.jamilelima.pomofocus.AppDatabase
-import io.github.jamilelima.pomofocus.model.Task
 import io.github.jamilelima.pomofocus.R
+import io.github.jamilelima.pomofocus.model.Task
 import io.github.jamilelima.pomofocus.scenes.main.MainActivity
 import kotlinx.android.synthetic.main.activity_new_task.*
 
@@ -41,15 +41,16 @@ class NewTaskActivity : AppCompatActivity(), NewTask.View {
                 .build()
     }
 
-    // Perguntar se isso pode ser feito em um único local pq está repetido em quase todas as activities
     override fun setSupportToActionBar() {
         setSupportActionBar(main_page_toolbar as Toolbar)
-        supportActionBar?.title = "New task"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.let {
+            it.title = "New task"
+            it.setDisplayHomeAsUpEnabled(true)
+            it.setDisplayShowCustomEnabled(true)
+        }
     }
 
-    // Perguntar pq quando recebe view: View como parametro dá erro ao tentar implementar a interface
+
     fun saveTask(view: View) {
 
         // VIEWMODEL:
@@ -57,14 +58,10 @@ class NewTaskActivity : AppCompatActivity(), NewTask.View {
         val description = task_description.text.toString()
         val pomodoroAmount = 4
         val isCompleted = false
+//        val vm =  NewTaskViewModel(title, description, pomodoroAmount, isCompleted)
 
-        // Qual o local para fazer esse tipo de manipulação?
-        db.taskDao().insertAll(Task(
-                title,
-                description,
-                pomodoroAmount,
-                isCompleted
-        ))
+
+        db.taskDao().insertAll(Task(title, description, pomodoroAmount, isCompleted))
 
         val mainActivityIntent = Intent(this@NewTaskActivity, MainActivity::class.java)
         mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
