@@ -24,8 +24,10 @@ class TasksDoneAdapter(context: Context, private val doneTasksList: List<Task>) 
 
     override fun onBindViewHolder(tasksDoneViewHolder: TasksDoneViewHolder, position: Int) {
         val currentDoneTask = doneTasksList[position]
-        tasksDoneViewHolder.taskTitle.text = currentDoneTask.title
-        tasksDoneViewHolder.taskDescription.text = currentDoneTask.description
+        tasksDoneViewHolder.apply {
+            askTitle.text = currentDoneTask.title
+            taskDescription.text = currentDoneTask.description
+        }
     }
 
     override fun getItemCount(): Int {
